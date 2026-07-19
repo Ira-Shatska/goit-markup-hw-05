@@ -12,6 +12,10 @@
   margin-right: 120px;
 }
 
+.footer-social-block {
+  margin-right: 83px;
+}
+
 .footer .logo {
   display: inline-block;
   margin-bottom: 16px;
@@ -41,7 +45,7 @@
 }
 
 .footer-subscribe-block {
-  margin-left: 80px;
+  margin-left: auto;
 }
 
 .footer-subscribe-title {
@@ -70,22 +74,43 @@
   line-height: 2;
   letter-spacing: 0.04em;
   color: #ffffff;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-subscribe-input:focus {
+  border-color: #31d0aa;
 }
 
 .footer-subscribe-input::placeholder {
   color: #ffffff;
 }
 
+.footer-subscribe-icon {
+  color: #ffffff;
+}
+
 .footer-subscribe-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   min-width: 165px;
+  height: 40px;
   padding: 8px 24px;
-}
-
-.footer-subscribe-icon {
+  background-color: #4d5ae5;
   color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-subscribe-btn:hover,
+.footer-subscribe-btn:focus {
+  background-color: #31d0aa;
 }
 
 .footer-social-link {
