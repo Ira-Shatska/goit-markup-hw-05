@@ -2,9 +2,28 @@
     <style>
         .default-palette, .palette0 {color: currentColor;
             --color0: #f4f4fd;
+            --color1: #2e2f42;
+            --color2: #4d5ae5;
         }
     </style>
     <defs>
+        <symbol id="icon-phone" viewBox="0 0 18 24" fill="none">
+            <path fill="var(--color1, #2e2f42)" d="M14.2263 14.3651l-1.8382-0.2099c-0.4414-0.0506-0.8756 0.1014-1.1868 0.4125l-1.3316 1.3316c-2.048-1.0421-3.7269-2.7138-4.769-4.769l1.3388-1.3389C6.7507 9.4803 6.9026 9.046 6.852 8.6046L6.6421 6.7809C6.5553 6.05 5.9401 5.5 5.202 5.5H3.95c-0.8177 0-1.498 0.6803-1.4473 1.498 0.3835 6.1803 5.3262 11.1158 11.4992 11.4993 0.8178 0.0507 1.498-0.6296 1.498-1.4473v-1.252c73e-4-0.7309-0.5427-1.346-1.2736-1.4329z" />
+        </symbol>
+        <symbol id="icon-person" viewBox="0 0 18 24" fill="none">
+            <path fill="var(--color2, #4d5ae5)" d="M9 12c1.6575 0 3-1.3425 3-3s-1.3425-3-3-3-3 1.3425-3 3 1.3425 3 3 3zM9 13.5c-2.0025 0-6 1.005-6 3v0.75C3 17.6625 3.3375 18 3.75 18h10.5c0.4125 0 0.75-0.3375 0.75-0.75V16.5c0-1.995-3.9975-3-6-3z" />
+        </symbol>
+        <symbol id="icon-email" viewBox="0 0 18 24" fill="none">
+            <path fill="var(--color1, #2e2f42)" d="M15 6H3C2.175 6 1.5075 6.675 1.5075 7.5l-75e-4 9C1.5 17.325 2.175 18 3 18h12c0.825 0 1.5-0.675 1.5-1.5v-9C16.5 6.675 15.825 6 15 6zM14.7 9.1875l-5.3025 3.315c-0.24 0.15-0.555 0.15-0.795 0L3.3 9.1875C3.1125 9.0675 3 8.865 3 8.6475 3 8.145 3.5475 7.845 3.975 8.1075L9 11.25l5.025-3.1425C14.4525 7.845 15 8.145 15 8.6475c0 0.2175-0.1125 0.42-0.3 0.54z" />
+        </symbol>
+        <symbol id="icon-close" viewBox="0 0 8 8" fill="none">
+            <path fill="var(--color1, #2e2f42)" d="M8 0.8057 7.1943 0 4 3.1943 0.8057 0 0 0.8057 3.1943 4 0 7.1943 0.8057 8 4 4.8057 7.1943 8 8 7.1943 4.8057 4z" />
+            <defs>
+                <clipPath id="clip0_1080479_48">
+                    <rect fill="#fff" width="8" height="8" />
+                </clipPath>
+            </defs>
+        </symbol>
         <symbol id="diagram" viewBox="0 0 64 64" fill="currentColor">
             <image width="64" height="64" href="data:image/png;base64,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" />
         </symbol>
@@ -41,24 +60,6 @@
         </symbol>
         <symbol id="facebook" viewBox="0 0 16 16" fill="none">
             <path fill="var(--color0, #f4f4fd)" d="M10.6647 2.6567l1.4606 0v-2.544C11.8733 0.078 11.0067 0 9.9973 0 7.8913 0 6.4487 1.3247 6.4487 3.7593l0 2.2407h-2.324l0 2.844h2.324l0 7.156H9.298V8.8447l2.23 0 0.354-2.844-2.5847 0 0-1.9594c7e-4-0.822 0.222-1.3846 1.3674-1.3846z" />
-        </symbol>
-        <symbol id="user" viewBox="0 0 16 16" fill="none">
-            <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M8 8a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm0 1.5c-3.038 0-6.5 1.554-6.5 4.5a.75.75 0 0 0 1.5 0c0-1.657 2.36-3 5-3s5 1.343 5 3a.75.75 0 0 0 1.5 0c0-2.946-3.462-4.5-6.5-4.5Z" />
-        </symbol>
-        <symbol id="phone" viewBox="0 0 16 16" fill="none">
-            <path fill="currentColor" d="M4.113 1.135a1.5 1.5 0 0 1 2.14.176l1.256 1.507a1.5 1.5 0 0 1-.048 1.99l-.86.93a8.16 8.16 0 0 0 3.6 3.601l.93-.86a1.5 1.5 0 0 1 1.99-.048l1.507 1.256a1.5 1.5 0 0 1 .176 2.14l-.972 1.15a2 2 0 0 1-1.925.65C8.09 12.7 3.3 7.91 1.663 4.032a2 2 0 0 1 .65-1.925l1.15-.972Z" />
-        </symbol>
-        <symbol id="email" viewBox="0 0 16 16" fill="none">
-            <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M2 4.5C2 3.67 2.67 3 3.5 3h9c.83 0 1.5.67 1.5 1.5v7c0 .83-.67 1.5-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5v-7Zm1.5-.1L8 7.9l4.5-3.5H3.5Zm-.1 1.24V11.5c0 .06.04.1.1.1h9a.1.1 0 0 0 .1-.1V5.64l-4.5 3.5a.75.75 0 0 1-.92 0L3.4 5.64Z" />
-        </symbol>
-        <symbol id="close" viewBox="0 0 24 24" fill="none">
-            <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M4.22 4.22a.75.75 0 0 1 1.06 0L12 10.94l6.72-6.72a.75.75 0 1 1 1.06 1.06L13.06 12l6.72 6.72a.75.75 0 1 1-1.06 1.06L12 13.06l-6.72 6.72a.75.75 0 0 1-1.06-1.06L10.94 12 4.22 5.28a.75.75 0 0 1 0-1.06Z" />
-        </symbol>
-        <symbol id="check" viewBox="0 0 10 8" fill="none">
-            <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m1 4.5 2.5 2.5L9 1" />
-        </symbol>
-        <symbol id="send" viewBox="0 0 24 24" fill="none">
-            <path fill="currentColor" d="M3 20 21 12 3 4v6l12 2-12 2v6Z" />
         </symbol>
     </defs>
 </svg>
