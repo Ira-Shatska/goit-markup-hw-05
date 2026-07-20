@@ -595,97 +595,229 @@
       </div>
     </footer>
 
-    <p class="modal-title">Leave your contacts and we will call you back</p>
-
-    <form class="modal-form" autocomplete="off">
-      <!-- 1. Поле Ім'я (Name) -->
-      <div class="modal-field">
-        <label for="user-name" class="modal-label">Name</label>
-        <div class="modal-input-wrap">
-          <input
-            type="text"
-            name="user-name"
-            id="user-name"
-            class="modal-input"
-            required
-          />
-          <svg class="modal-input-icon" width="24" height="24">
-            <use href="./images/icons.svg#icon-person"></use>
-          </svg>
-        </div>
-      </div>
-
-      <!-- 2. Поле Телефон (Phone) -->
-      <div class="modal-field">
-        <label for="user-phone" class="modal-label">Phone</label>
-        <div class="modal-input-wrap">
-          <input
-            type="tel"
-            name="user-phone"
-            id="user-phone"
-            class="modal-input"
-            required
-          />
-          <svg class="modal-input-icon" width="24" height="24">
-            <use href="./images/icons.svg#icon-phone"></use>
-          </svg>
-        </div>
-      </div>
-
-      <!-- 3. Поле Email -->
-      <div class="modal-field">
-        <label for="user-email" class="modal-label">Email</label>
-        <div class="modal-input-wrap">
-          <input
-            type="email"
-            name="user-email"
-            id="user-email"
-            class="modal-input"
-            required
-          />
-          <svg class="modal-input-icon" width="24" height="24">
-            <use href="./images/icons.svg#icon-email"></use>
-          </svg>
-        </div>
-      </div>
-
-      <!-- 4. Поле Коментар (Comment) — додано textarea, як просив ментор -->
-      <div class="modal-field-message">
-        <label for="user-comment" class="modal-label">Comment</label>
-        <textarea
-          name="user-comment"
-          id="user-comment"
-          class="modal-textarea"
-          placeholder="Text input"
-        ></textarea>
-      </div>
-
-      <!-- 5. Блок Чекбокса (Privacy Policy) — додано повністю -->
-      <div class="modal-checkbox-wrapper">
-        <input
-          type="checkbox"
-          name="user-privacy"
-          id="user-privacy"
-          value="true"
-          class="modal-checkbox-input visually-hidden"
-          required
-        />
-        <label for="user-privacy" class="modal-checkbox-label">
-          <span class="modal-checkbox-custom">
-            <svg class="modal-checkbox-icon" width="10" height="8">
-              <use href="./images/icons.svg#icon-check"></use>
+    <!-- ОСЬ ЦЕЙ ГОЛОВНИЙ КОНТЕЙНЕР, ЯКИЙ ШУКАЄ АВТОТЕСТ -->
+    <div id="modal">
+      <div class="backdrop">
+        <div class="modal">
+          <button type="button" class="modal-close-btn">
+            <svg class="modal-close-icon" width="8" height="8">
+              <use href="./images/icons.svg#icon-close"></use>
             </svg>
-          </span>
-          I accept the terms and conditions of the&nbsp;<a
-            href="#"
-            class="modal-privacy-link"
-            >Privacy Policy</a
-          >
-        </label>
-      </div>
+          </button>
 
-      <!-- 6. Кнопка відправки з правильним класом -->
-      <button type="submit" class="modal-submit-btn">Send</button>
-    </form>
+          <p class="modal-title">
+            Leave your contacts and we will call you back
+          </p>
+
+          <form class="modal-form" autocomplete="off">
+            <!-- 1. Поле Ім'я -->
+            <div class="modal-field">
+              <label for="user-name" class="modal-label">Name</label>
+              <div class="modal-input-wrap">
+                <input
+                  type="text"
+                  name="user-name"
+                  id="user-name"
+                  class="modal-input"
+                  required
+                />
+                <svg class="modal-input-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-person"></use>
+                </svg>
+              </div>
+            </div>
+
+            <!-- 2. Поле Телефон -->
+            <div class="modal-field">
+              <label for="user-phone" class="modal-label">Phone</label>
+              <div class="modal-input-wrap">
+                <input
+                  type="tel"
+                  name="user-phone"
+                  id="user-phone"
+                  class="modal-input"
+                  required
+                />
+                <svg class="modal-input-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-phone"></use>
+                </svg>
+              </div>
+            </div>
+
+            <!-- 3. Поле Email -->
+            <div class="modal-field">
+              <label for="user-email" class="modal-label">Email</label>
+              <div class="modal-input-wrap">
+                <input
+                  type="email"
+                  name="user-email"
+                  id="user-email"
+                  class="modal-input"
+                  required
+                />
+                <svg class="modal-input-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-email"></use>
+                </svg>
+              </div>
+            </div>
+
+            <!-- 4. Поле Коментар -->
+            <div class="modal-field-message">
+              <label for="user-comment" class="modal-label">Comment</label>
+              <textarea
+                name="user-comment"
+                id="user-comment"
+                class="modal-textarea"
+                placeholder="Text input"
+              ></textarea>
+            </div>
+
+            <!-- 5. Блок Чекбокса -->
+            <div class="modal-checkbox-wrapper">
+              <input
+                type="checkbox"
+                name="user-privacy"
+                id="user-privacy"
+                value="true"
+                class="modal-checkbox-input visually-hidden"
+                required
+              />
+              <label for="user-privacy" class="modal-checkbox-label">
+                <span class="modal-checkbox-custom">
+                  <svg class="modal-checkbox-icon" width="10" height="8">
+                    <use href="./images/icons.svg#icon-check"></use>
+                  </svg>
+                </span>
+                I accept the terms and conditions of the&nbsp;<a
+                  href="#"
+                  class="modal-privacy-link"
+                  >Privacy Policy</a
+                >
+              </label>
+            </div>
+
+            <!-- 6. Кнопка відправки з іконкою літачка -->
+            <button type="submit" class="modal-submit-btn">
+              Send
+              <svg class="modal-submit-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- ОСЬ ЦЕЙ ГОЛОВНИЙ КОНТЕЙНЕР, ЯКИЙ ШУКАЄ АВТОТЕСТ -->
+    <div id="modal">
+      <div class="backdrop">
+        <div class="modal">
+          <button type="button" class="modal-close-btn">
+            <svg class="modal-close-icon" width="8" height="8">
+              <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
+
+          <p class="modal-title">
+            Leave your contacts and we will call you back
+          </p>
+
+          <form class="modal-form" autocomplete="off">
+            <!-- 1. Поле Ім'я -->
+            <div class="modal-field">
+              <label for="user-name" class="modal-label">Name</label>
+              <div class="modal-input-wrap">
+                <input
+                  type="text"
+                  name="user-name"
+                  id="user-name"
+                  class="modal-input"
+                  required
+                />
+                <svg class="modal-input-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-person"></use>
+                </svg>
+              </div>
+            </div>
+
+            <!-- 2. Поле Телефон -->
+            <div class="modal-field">
+              <label for="user-phone" class="modal-label">Phone</label>
+              <div class="modal-input-wrap">
+                <input
+                  type="tel"
+                  name="user-phone"
+                  id="user-phone"
+                  class="modal-input"
+                  required
+                />
+                <svg class="modal-input-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-phone"></use>
+                </svg>
+              </div>
+            </div>
+
+            <!-- 3. Поле Email -->
+            <div class="modal-field">
+              <label for="user-email" class="modal-label">Email</label>
+              <div class="modal-input-wrap">
+                <input
+                  type="email"
+                  name="user-email"
+                  id="user-email"
+                  class="modal-input"
+                  required
+                />
+                <svg class="modal-input-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-email"></use>
+                </svg>
+              </div>
+            </div>
+
+            <!-- 4. Поле Коментар -->
+            <div class="modal-field-message">
+              <label for="user-comment" class="modal-label">Comment</label>
+              <textarea
+                name="user-comment"
+                id="user-comment"
+                class="modal-textarea"
+                placeholder="Text input"
+              ></textarea>
+            </div>
+
+            <!-- 5. Блок Чекбокса -->
+            <div class="modal-checkbox-wrapper">
+              <input
+                type="checkbox"
+                name="user-privacy"
+                id="user-privacy"
+                value="true"
+                class="modal-checkbox-input visually-hidden"
+                required
+              />
+              <label for="user-privacy" class="modal-checkbox-label">
+                <span class="modal-checkbox-custom">
+                  <svg class="modal-checkbox-icon" width="10" height="8">
+                    <use href="./images/icons.svg#icon-check"></use>
+                  </svg>
+                </span>
+                I accept the terms and conditions of the&nbsp;<a
+                  href="#"
+                  class="modal-privacy-link"
+                  >Privacy Policy</a
+                >
+              </label>
+            </div>
+
+            <!-- 6. Кнопка відправки з іконкою літачка -->
+            <button type="submit" class="modal-submit-btn">
+              Send
+              <svg class="modal-submit-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
